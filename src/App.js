@@ -9,6 +9,9 @@ function App() {
         <p>
           Hello kaka
         </p>
+        <p className="App-version">
+          版本号: 0.1.0
+        </p>
       </header>
     </div>
   );
