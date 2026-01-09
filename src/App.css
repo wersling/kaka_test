@@ -1,5 +1,78 @@
 .App {
   text-align: center;
+  position: relative;
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  background-color: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* 浅色主题 */
+.App.light {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.App.light .theme-toggle {
+  color: #333;
+  background-color: #fff;
+}
+
+.App.light .App-header {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.App.light .App-version {
+  color: #666;
+}
+
+.App.light .App-description {
+  color: #888;
+}
+
+/* 深色主题 */
+.App.dark {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.App.dark .theme-toggle {
+  color: #fff;
+  background-color: #282c34;
+}
+
+.App.dark .App-header {
+  background-color: #282c34;
+  color: white;
+}
+
+.App.dark .App-version {
+  color: #8899a6;
+}
+
+.App.dark .App-description {
+  color: #a0a0a0;
 }
 
 .App-logo {
@@ -14,14 +87,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .App-link {
@@ -30,15 +102,15 @@
 
 .App-version {
   font-size: calc(8px + 1.5vmin);
-  color: #8899a6;
   margin-top: 20px;
+  transition: color 0.3s ease;
 }
 
 .App-description {
   font-size: calc(8px + 1.5vmin);
-  color: #a0a0a0;
   margin-top: 10px;
   max-width: 600px;
+  transition: color 0.3s ease;
 }
 
 @keyframes App-logo-spin {
