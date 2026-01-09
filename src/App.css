@@ -2,6 +2,44 @@
   text-align: center;
 }
 
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.light-theme .theme-toggle-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .theme-toggle-btn:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark-theme .theme-toggle-btn {
+  background-color: #3a3f4a;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .theme-toggle-btn:hover {
+  background-color: #4a4f5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,13 +52,22 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  transition: all 0.3s ease;
+}
+
+.light-theme .App-header {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.dark-theme .App-header {
+  background-color: #282c34;
   color: white;
 }
 
@@ -30,15 +77,31 @@
 
 .App-version {
   font-size: calc(8px + 1.5vmin);
-  color: #8899a6;
   margin-top: 20px;
+  transition: color 0.3s ease;
+}
+
+.light-theme .App-version {
+  color: #666;
+}
+
+.dark-theme .App-version {
+  color: #8899a6;
 }
 
 .App-description {
   font-size: calc(8px + 1.5vmin);
-  color: #a0a0a0;
   margin-top: 10px;
   max-width: 600px;
+  transition: color 0.3s ease;
+}
+
+.light-theme .App-description {
+  color: #777;
+}
+
+.dark-theme .App-description {
+  color: #a0a0a0;
 }
 
 @keyframes App-logo-spin {

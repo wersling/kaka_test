@@ -1,9 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useTheme } from './ThemeContext';
 
 function App() {
+  const { isDark, toggleTheme } = useTheme();
+
   return (
     <div className="App">
+      <button
+        className="theme-toggle-btn"
+        onClick={toggleTheme}
+        aria-label="切换主题"
+      >
+        {isDark ? '☀️ 浅色' : '🌙 深色'}
+      </button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
