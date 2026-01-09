@@ -1,5 +1,37 @@
 .App {
   text-align: center;
+  position: relative;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.light-mode .theme-toggle {
+  background-color: #282c34;
+  color: white;
+}
+
+.light-mode .theme-toggle:hover {
+  background-color: #3a3f4b;
+}
+
+.dark-mode .theme-toggle {
+  background-color: #ffffff;
+  color: #282c34;
+}
+
+.dark-mode .theme-toggle:hover {
+  background-color: #e0e0e0;
 }
 
 .App-logo {
@@ -13,7 +45,20 @@
   }
 }
 
-.App-header {
+/* 浅色模式（默认） */
+.light-mode .App-header {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}
+
+/* 深色模式 */
+.dark-mode .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -30,15 +75,29 @@
 
 .App-version {
   font-size: calc(8px + 1.5vmin);
-  color: #8899a6;
   margin-top: 20px;
+}
+
+.light-mode .App-version {
+  color: #555555;
+}
+
+.dark-mode .App-version {
+  color: #8899a6;
 }
 
 .App-description {
   font-size: calc(8px + 1.5vmin);
-  color: #a0a0a0;
   margin-top: 10px;
   max-width: 600px;
+}
+
+.light-mode .App-description {
+  color: #666666;
+}
+
+.dark-mode .App-description {
+  color: #a0a0a0;
 }
 
 @keyframes App-logo-spin {
