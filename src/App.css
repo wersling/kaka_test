@@ -14,14 +14,71 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 浅色模式（默认） */
+body.light-mode .App-header {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+body.light-mode .App-version {
+  color: #666;
+}
+
+body.light-mode .App-description {
+  color: #888;
+}
+
+/* 深色模式 */
+body.dark-mode .App-header {
+  background-color: #282c34;
   color: white;
+}
+
+body.dark-mode .App-version {
+  color: #8899a6;
+}
+
+body.dark-mode .App-description {
+  color: #a0a0a0;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #3a3f4b;
+  border-color: #555;
 }
 
 .App-link {
@@ -30,15 +87,15 @@
 
 .App-version {
   font-size: calc(8px + 1.5vmin);
-  color: #8899a6;
   margin-top: 20px;
+  transition: color 0.3s ease;
 }
 
 .App-description {
   font-size: calc(8px + 1.5vmin);
-  color: #a0a0a0;
   margin-top: 10px;
   max-width: 600px;
+  transition: color 0.3s ease;
 }
 
 @keyframes App-logo-spin {

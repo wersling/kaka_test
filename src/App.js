@@ -1,9 +1,28 @@
+import { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // 默认设置为浅色模式
+    document.body.className = isDarkMode ? 'dark-mode' : 'light-mode';
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
     <div className="App">
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label="切换主题"
+      >
+        {isDarkMode ? '🌙' : '☀️'}
+      </button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
