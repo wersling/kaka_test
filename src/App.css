@@ -2,6 +2,50 @@
   text-align: center;
 }
 
+.App.light-mode .App-header {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.App.dark-mode .App-header {
+  background-color: #282c34;
+  color: white;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.App.light-mode .theme-toggle {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.App.dark-mode .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.App.light-mode .theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,29 +58,42 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.App.light-mode .App-version {
+  color: #666;
+}
+
+.App.dark-mode .App-version {
+  color: #8899a6;
+}
+
 .App-version {
   font-size: calc(8px + 1.5vmin);
-  color: #8899a6;
   margin-top: 20px;
+}
+
+.App.light-mode .App-description {
+  color: #777;
+}
+
+.App.dark-mode .App-description {
+  color: #a0a0a0;
 }
 
 .App-description {
   font-size: calc(8px + 1.5vmin);
-  color: #a0a0a0;
   margin-top: 10px;
   max-width: 600px;
 }
