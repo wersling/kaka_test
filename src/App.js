@@ -1,9 +1,23 @@
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="App">
+    <div className={`App ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label="切换主题"
+      >
+        {isDarkMode ? '☀️ 浅色' : '🌙 深色'}
+      </button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
