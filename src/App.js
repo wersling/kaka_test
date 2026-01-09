@@ -12,6 +12,9 @@ function App() {
         <p className="App-version">
           版本号: 0.1.0
         </p>
+        <p className="App-description">
+          一个简单的 React 演示项目，用于展示基础功能
+        </p>
       </header>
     </div>
   );
