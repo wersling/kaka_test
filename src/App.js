@@ -1,9 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { useTheme } from './ThemeContext';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
