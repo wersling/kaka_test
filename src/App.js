@@ -1,10 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { useTheme } from './ThemeContext';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div className="App">
       <header className="App-header">
+        <button
+          className="theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label="切换主题"
+        >
+          {theme === 'light' ? '🌙' : '☀️'}
+        </button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello kaka
