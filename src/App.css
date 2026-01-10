@@ -14,29 +14,31 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--header-bg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--link-color);
 }
 
 .App-version {
   font-size: calc(8px + 1.5vmin);
-  color: #8899a6;
+  color: var(--text-secondary);
   margin-top: 20px;
 }
 
 .App-description {
   font-size: calc(8px + 1.5vmin);
-  color: #a0a0a0;
+  color: var(--text-tertiary);
   margin-top: 10px;
   max-width: 600px;
 }
