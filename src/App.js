@@ -1,10 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import { useTheme } from './ThemeContext';
 
 function App() {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
     <div className="App">
-      <header className="App-header">
+      <header className={`App-header ${isDarkMode ? 'dark' : 'light'}`}>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {isDarkMode ? '浅色模式' : '深色模式'}
+        </button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hello kaka
