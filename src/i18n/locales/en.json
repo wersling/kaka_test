@@ -1,0 +1,14 @@
+{
+  "translation": {
+    "themeToggle": {
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "languageToggle": "中文",
+    "app": {
+      "greeting": "Hello kaka",
+      "version": "Version: 0.1.0",
+      "description": "A simple React demo project to showcase basic features"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "translation": {
+    "themeToggle": {
+      "light": "浅色",
+      "dark": "深色"
+    },
+    "languageToggle": "English",
+    "app": {
+      "greeting": "Hello kaka",
+      "version": "版本号: 0.1.0",
+      "description": "一个简单的 React 演示项目,用于展示基础功能"
+    }
+  }
+}

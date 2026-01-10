@@ -1,29 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
 import { useTheme } from './contexts/ThemeContext';
+import { useLanguage } from './contexts/LanguageContext';
+import { useTranslation } from 'react-i18next';
+import './i18n/i18n';
 
 function App() {
   const { isDarkMode, toggleTheme } = useTheme();
+  const { toggleLanguage } = useLanguage();
+  const { t } = useTranslation();
 
   return (
     <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label="切换主题"
-      >
-        {isDarkMode ? '☀️ 浅色' : '🌙 深色'}
-      </button>
+      <div className="controls">
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label="切换主题"
+        >
+          {isDarkMode ? '☀️ ' + t('themeToggle.light') : '🌙 ' + t('themeToggle.dark')}
+        </button>
+        <button
+          className="language-toggle"
+          onClick={toggleLanguage}
+          aria-label="切换语言"
+        >
+          {t('languageToggle')}
+        </button>
+      </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello kaka
+          {t('app.greeting')}
         </p>
         <p className="App-version">
-          版本号: 0.1.0
+          {t('app.version')}
         </p>
         <p className="App-description">
-          一个简单的 React 演示项目,用于展示基础功能
+          {t('app.description')}
         </p>
       </header>
     </div>
