@@ -3,10 +3,17 @@
   position: relative;
 }
 
-.theme-toggle {
+.controls {
   position: absolute;
   top: 20px;
   right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.theme-toggle,
+.language-toggle {
   padding: 8px 16px;
   border: none;
   border-radius: 20px;
@@ -14,20 +21,22 @@
   font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
-  z-index: 1000;
 }
 
-.App.light .theme-toggle {
+.App.light .theme-toggle,
+.App.light .language-toggle {
   background-color: #282c34;
   color: white;
 }
 
-.App.dark .theme-toggle {
+.App.dark .theme-toggle,
+.App.dark .language-toggle {
   background-color: white;
   color: #282c34;
 }
 
-.theme-toggle:hover {
+.theme-toggle:hover,
+.language-toggle:hover {
   transform: scale(1.05);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
